@@ -15,7 +15,8 @@
   "scripts": {
     "test": "jest",
     "bundle": "rm -rf lib && webpack --config ./webpack/lib.config.ts && webpack --config ./webpack/lib.min.config.ts",
-    "build": "rm -rf dist && tsc && yarn bundle"
+    "build": "rm -rf dist && tsc && yarn bundle",
+    "postinstall": "rm -rf dist && tsc && rm -rf lib && webpack --config ./webpack/lib.config.ts && webpack --config ./webpack/lib.min.config.ts"
   },
   "devDependencies": {
     "@types/jest": "^24.0.13",
